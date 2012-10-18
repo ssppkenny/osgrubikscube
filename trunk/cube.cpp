@@ -618,6 +618,7 @@ int main(int argc, char** argv)
     osg::ref_ptr<myKeyboardEventHandler> handler = new myKeyboardEventHandler(transforms); 
     
     osgViewer::Viewer viewer;
+    viewer.setUpViewInWindow(0,0,800,600);
     viewer.addEventHandler(handler);
     viewer.setSceneData(root.get());
     return viewer.run();
