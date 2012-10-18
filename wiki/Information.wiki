@@ -7,5 +7,5 @@ This is a simple Rubik's cube puzzle..
 
 = Details =
 
-  * Move the cube faces with 'b' - back, 'f' - front, 'l' - left, 'l' - left, 'r' - right, 't' - top and 'u' - 'bottom' 
+  * Move the cube faces with *b* - back, *f* - front, *l* - left, *r* - right, *t* - top and *u* - 'bottom' 
   * You can rotate the cube with the mouse
