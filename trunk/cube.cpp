@@ -8,6 +8,7 @@
 #include <osg/ShapeDrawable>
 #include <osgUtil/SmoothingVisitor>
 #include <osg/MatrixTransform>
+#include <osg/LightSource>
 #include <vector>
 
 using namespace std;
@@ -321,10 +322,10 @@ osg::ref_ptr<osg::MatrixTransform> createCube(osg::ref_ptr<osg::Geode> geode, fl
      colors->push_back( osg::Vec4(0.0f, 0.0f, 1.0f, 1.0f) );
      colors->push_back( osg::Vec4(0.0f, 0.0f, 1.0f, 1.0f) );
 
-     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.0f, 1.0f) );
-     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.0f, 1.0f) );
-     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.0f, 1.0f) );
-     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.0f, 1.0f) );
+     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.2f, 1.0f) );
+     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.2f, 1.0f) );
+     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.2f, 1.0f) );
+     colors->push_back( osg::Vec4(1.0f, 0.5f, 0.2f, 1.0f) );
      
      colors->push_back( osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f) );
      colors->push_back( osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f) );
@@ -614,6 +615,13 @@ int main(int argc, char** argv)
      }
       }
     }
+
+    osg::ref_ptr<osg::LightSource> ls = new osg::LightSource();
+    ls->getLight()->setPosition(osg::Vec4(5.0f,5.0f,5.0f,0.0f));
+    ls->getLight()->setAmbient(osg::Vec4(1.2,1.2,1.2,1.2));
+    ls->getLight()->setSpecular(osg::Vec4(1.2,1.2,1.2,1.2));
+    ls->getLight()->setLinearAttenuation(1.0f);
+    root->addChild(ls.get());
 
     osg::ref_ptr<myKeyboardEventHandler> handler = new myKeyboardEventHandler(transforms); 
     
