@@ -97,6 +97,7 @@ osg::ref_ptr<osg::MatrixTransform> CubeCreator::createCube(osg::ref_ptr<osg::Geo
     return transform;
 
 
+
 };
 
 
