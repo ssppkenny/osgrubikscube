@@ -68,6 +68,7 @@ int main(int argc, char** argv)
     initGeode(geode);
     osg::ref_ptr<osg::MatrixTransform> transforms[3][3][3];
     initTransforms(transforms, cubeCreator, root, geode);
+    setLightSource(root);
 
     osg::ref_ptr<myKeyboardEventHandler> handler = new myKeyboardEventHandler(transforms); 
    
