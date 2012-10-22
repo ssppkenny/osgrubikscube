@@ -1,6 +1,8 @@
 #ifndef CUBECREATOR_H
 #define CUBECREATOR_H
+#ifdef WIN32
 #include <windows.h>
+#endif
 #include <osg/MatrixTransform>
 #include <osg/ref_ptr>
 #include <osg/Referenced>
